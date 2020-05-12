@@ -18,12 +18,11 @@ using namespace MyTestPB;
 int main(int argc, char **argv) {
     Logger::InitLogger();
 
-    extern char *optarg;
     string ip = "";
     string mode = "";
 
     int optc;
-    while (-1 != (optc = getopt(argc, argv, "M:P"))) {
+    while (-1 != (optc = getopt(argc, argv, "M:P:"))) {
         switch (optc) {
             case 'M': {
                 mode = optarg;

@@ -33,7 +33,7 @@ private:
 class Logger {
 public:
     static void InitLogger() {
-        static Logger instance("", GetCurrentWorkingDir());
+        static Logger instance("MyTest", GetCurrentWorkingDir());
     }
 
 private:
@@ -41,6 +41,7 @@ private:
 
     Logger(const std::string &prefix, const std::string &path) {
         logWorker_ = g3::LogWorker::createLogWorker();
+        logWorker_->addDefaultLogger(prefix, path, "");
         g3::initializeLogging(logWorker_.get());
 
         std::function<void(g3::FatalMessagePtr) > fatal_to_g3logworker_function_ptr =
