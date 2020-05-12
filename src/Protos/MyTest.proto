@@ -1,0 +1,17 @@
+syntax = "proto3";
+package MyTestPB;
+option cc_enable_arenas = true;
+
+
+service MyTestService {
+  rpc HelloWorld (HelloWorldRequest) returns (HelloWorldResponse) {}
+}
+
+message HelloWorldRequest {
+    string value = 1;
+}
+
+message HelloWorldResponse {
+    string value = 1;
+    uint64 USN = 2;
+}

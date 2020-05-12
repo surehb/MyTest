@@ -1,0 +1,6 @@
+[submodule "thirdparty/grpc"]
+	path = thirdparty/grpc
+	url = https://github.com/grpc/grpc.git
+[submodule "thirdparty/g3log"]
+	path = thirdparty/g3log
+	url = https://github.com/KjellKod/g3log.git

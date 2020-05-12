@@ -1,0 +1,12 @@
+.vscode
+CMakeFiles/
+CMakeScripts/
+CMakeCache.txt
+*.cmake
+Makefile
+build/
+*.DS_Store
+*.log
+*.log.*
+*.pb.*
+tmp_*.stamp
