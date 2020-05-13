@@ -42,3 +42,20 @@ Build MyTest
   1. cd ../../..
   2. cmake3 .
   3. make
+
+
+Run it!
+^^^^^^^^^
+
+Start service
+::
+  Sync mode:
+      ./build/bin/MyTestService -P 127.0.0.1:5328 -M S
+
+  Async mode:
+      ./build/bin/MyTestService -P 127.0.0.1:5328 -M A
+
+
+Start client
+::
+  ./build/bin/MyTestClient 127.0.0.1:5328
