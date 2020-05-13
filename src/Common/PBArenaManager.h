@@ -1,5 +1,5 @@
-#ifndef PHSTORE_PBARENA_MANAGER_H
-#define PHSTORE_PBARENA_MANAGER_H
+#ifndef PBARENA_MANAGER_H
+#define PBARENA_MANAGER_H
 
 #include <queue>
 #include <mutex>

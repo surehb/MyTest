@@ -3,14 +3,14 @@
 
 #include "BaseContext.h"
 #include "../MyTest.grpc.pb.h"
-#include "../MyTest.h"
+#include "../ServingContext.h"
 
 class HelloWorldContext : public BaseContext {
 public:
     HelloWorldContext(MyTestPB::MyTestService::AsyncService *service,
                       grpc::ServerCompletionQueue *cq,
                       std::shared_ptr<ThreadPool> &tp,
-                      MyTest &servingContext)
+                      ServingContext &servingContext)
             : BaseContext(cq, tp), service_(service), responseWriter_(&ctx_), servingContext_(servingContext) {
         service_->RequestHelloWorld(&ctx_, &request_, &responseWriter_, cq_, cq_, this);
     }
@@ -32,7 +32,7 @@ private:
     MyTestPB::MyTestService::AsyncService *service_;
     MyTestPB::HelloWorldRequest request_;
     grpc::ServerAsyncResponseWriter<MyTestPB::HelloWorldResponse> responseWriter_;
-    MyTest &servingContext_;
+    ServingContext &servingContext_;
 };
 
 #endif //HELLOWORLDCONTEXT_H

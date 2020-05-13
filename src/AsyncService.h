@@ -5,7 +5,7 @@
 
 #include "AsyncContext/HelloWorldContext.h"
 #include "AsyncServiceBase.h"
-#include "MyTest.h"
+#include "ServingContext.h"
 
 
 class AsyncService : public AsyncServiceBase {
@@ -14,11 +14,11 @@ public:
     }
 
     void CreateContext(grpc::ServerCompletionQueue *cq) override {
-        new HelloWorldContext(&service_, cq, tp_, myTest_);
+        new HelloWorldContext(&service_, cq, tp_, servingContext_);
     }
 
 private:
-    MyTest myTest_;
+    ServingContext servingContext_;
 };
 
 #endif // ASYNCSERVICE_H

@@ -57,8 +57,12 @@ endforeach()
 add_custom_target(my_test_PB DEPENDS ${tmp_generated})
 
 # Main
-add_executable(gRPC_Demo_Service Main.cc Common/Logger.cc ${tmp_generated})
-add_dependencies(gRPC_Demo_Service my_test_PB)
-target_link_libraries(gRPC_Demo_Service libg3logger.a libprotobuf.a libgrpc++_unsecure.a libgrpc_unsecure.a libgpr.a 
+add_executable(MyTestService MyTestService.cc Common/Logger.cc ${tmp_generated})
+add_dependencies(MyTestService my_test_PB)
+target_link_libraries(MyTestService libg3logger.a libprotobuf.a libgrpc++_unsecure.a libgrpc_unsecure.a libgpr.a 
 libaddress_sorting.a libcares.a libz.a)
+
+add_executable(MyTestClient MyTestClient.cc Common/Logger.cc ${tmp_generated})
+add_dependencies(MyTestClient my_test_PB)
+target_link_libraries(MyTestClient libg3logger.a libprotobuf.a libgrpc++_unsecure.a libgrpc_unsecure.a libgpr.a libaddress_sorting.a libcares.a libz.a)
 

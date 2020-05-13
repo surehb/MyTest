@@ -24,11 +24,11 @@ public:
     grpc::Status HelloWorld(grpc::ServerContext* context,
                       const MyTestPB::HelloWorldRequest* request,
                       MyTestPB::HelloWorldResponse* response) {
-        return myTest_.HelloWorld(request, response);
+        return servingContext_.HelloWorld(request, response);
     }
 
 private:
-    MyTest myTest_;
+    ServingContext servingContext_;
 };
 
 #endif // SYNCSERVICE_H

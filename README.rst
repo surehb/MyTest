@@ -14,7 +14,7 @@ Build
 
 Submodules
 ::
-  1. cd gRPC-Demo
+  1. cd MyTest
   2. git submodule init
   3. git submodule update
 
